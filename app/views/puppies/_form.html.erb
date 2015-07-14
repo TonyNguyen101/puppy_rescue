@@ -1,0 +1,44 @@
+<% if @puppy.errors.any? %>
+  <% @puppy.errors.full_messages.each do |error| %>
+    <p style="color:red;">
+      <%= error %>
+    </p>
+  <% end %>
+<% end %>
+<div class="form-group">
+<%= form_for @puppy do |pup|%>
+  <div>
+    <%= pup.label :name%>
+    <%= pup.text_field :name, autofocus: true %>
+  </div>
+  <div>
+    <%= pup.label :breed%>
+    <%= pup.text_field :breed%>
+  </div>
+    <div>
+    <%= pup.label :age%>
+    <%= pup.text_field :age%>
+  </div>
+  <div>
+    <%= pup.label :bio%>
+    <%= pup.text_field :bio%>
+  </div>
+  <div>
+    <%= pup.label :image%>
+    <%= pup.text_field :image%>
+  </div>
+  <div>
+    <%= pup.submit "save puppy" %>
+  </div>
+<% end %>
+</div>
+
+<% flash.each do |key, value| %>
+  <% if key == "notice" %>
+    <%= content_tag :div, value, class: "text-center alert alert-warning" %>
+  <% elsif key == "alert" %>
+    <%= content_tag :div, value, class: "text-center alert alert-danger" %>
+  <% else %>
+    <%= content_tag :div, value, class: "text-center alert alert-success" %>
+  <% end %>
+<% end %>

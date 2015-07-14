@@ -1,0 +1,10 @@
+<div class="one_puppy">
+	<h1>Name:<%= @puppy.name %></h1>
+	<p>Age:<%= @puppy.age %></p>
+	<p>Breed:<%= @puppy.breed %></p>
+	<p>Bio:<%= @puppy.bio %></p>
+	<p><img height='100' src="<%= @puppy.image %>" alt=""></p>
+	<%= link_to "Delete puppy", @puppy, method: :delete %>
+</div>
+
+<%= link_to "Back to index", puppies_path %>

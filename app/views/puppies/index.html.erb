@@ -1,0 +1,18 @@
+<h3>Adopt a' puppy</h3>
+
+<%= link_to "Add new Puppy", new_puppy_path %>
+
+<% @puppies.each do |puppy| %>
+	<table class="table table-hover">
+		<tr>
+			<td><img height='100' width="100" src="<%= puppy.image %>" alt=""></td>
+			<td>Name:<br><%= puppy.name %></td>
+			<td>Age:<%= puppy.age %></td>
+			<td>Breed:<br><%= puppy.breed %></td>
+			<td>Bio:<br><%= puppy.bio %></td>
+			<td><%= link_to "Edit", edit_puppy_path(puppy) %></td>
+		</tr>	
+	</table>
+	
+	
+<% end %>
